@@ -1,19 +1,20 @@
-    var up = 0;
-    var down = 0;
-    var left = 0;
-    var right = 0;
+    var up = document.getElementById("Up");
+    var down = document.getElementById("Down");
+    var left = document.getElementById("Left");
+    var right = document.getElementById("Right");
     var position = "Beginning";
     var points = 0;
     var roomSize = 5;
     var image = document.getElementById("image");
+    var ButtonImage = ["/images/kangaroo.jpg", "/images/clown.jpg", "/images/bear.jpg", "/images/addison.jpg", "/images/cow.jpg", "/images/doctor.png", "/images/prince.jpg",  "/images/Eric.jpg", "/images/cat.jpg", "/images/rat.jpg", "/images/bigBird.jpg", "/images/beyonce.jpg", "/images/empty.jpg", "/images/donut.jpg", "/images/chef.jpg", "/images/empty2.jpg"];
     
   main();
 
   function main() {
-    findTheDonut1();
+    welcome();
   }
 
-  function findTheDonut1() {
+  function welcome() {
 
     var fullName;
     var instructions = "";
@@ -28,6 +29,17 @@
 
     document.write(instructions);
   }
+
+   up.addEventListener("click", changeImage);
+   down.addEventListener("click", changeImage);
+   left.addEventListener("click", changeImage);
+   right.addEventListener("click", changeImage);
+
+ function changeImage() {
+    var random = buttonImage[Math.floor(Math.random)() * buttonImage.length];
+    document.getElementById("image").innerHTML = random;
+    
+ }
     
   
 
